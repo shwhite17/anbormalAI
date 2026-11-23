@@ -1,0 +1,13 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DJANGO_DEBUG=1
+      - DJANGO_SECRET_KEY=dev-only-change-me
+    volumes:
+      - vault_data:/app/data
+
+volumes:
+  vault_data:
